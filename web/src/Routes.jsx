@@ -17,6 +17,12 @@ import BlogLayout from './layouts/BlogLayout/BlogLayout'
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
+      <Set wrap={ScaffoldLayout} title="Images" titleTo="images" buttonLabel="New Image" buttonTo="newImage">
+        <Route path="/images/new" page={ImageNewImagePage} name="newImage" />
+        <Route path="/images/{id:Int}/edit" page={ImageEditImagePage} name="editImage" />
+        <Route path="/images/{id:Int}" page={ImageImagePage} name="image" />
+        <Route path="/images" page={ImageImagesPage} name="images" />
+      </Set>
       <Route path="/login" page={LoginPage} name="login" />
       <Route path="/signup" page={SignupPage} name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />

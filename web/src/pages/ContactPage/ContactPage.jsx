@@ -38,19 +38,32 @@ const ContactPage = () => {
 
       <Toaster />
       <Form onSubmit={onSubmit} error={error} formMethods={formMethods}>
-        <FormError error={error} wrapperClassName="form-error" />
+        <FormError
+          error={error}
+          wrapperClassName="py-2 px-6 rounded-lg bg-red-100 text-red-700"
+          listClassName="list-disc ml-4"
+        />
 
-        <Label name="name" errorClassName="error">
+        <Label
+          name="name"
+          errorClassName="error"
+          className="block text-gray-700 uppercase text-sm"
+        >
           Name
         </Label>
         <TextField
           name="name"
           validation={{ required: true }}
           errorClassName="error"
+          className="border rounded-sm px-2 py-1 outline-none"
         />
         <FieldError name="name" className="error" />
 
-        <Label name="email" errorClassName="error">
+        <Label
+          name="email"
+          errorClassName="error"
+          className="block text-gray-700 uppercase text-sm"
+        >
           Email
         </Label>
         <TextField
@@ -62,21 +75,32 @@ const ContactPage = () => {
               message: 'Please enter a valid email address',
             },
           }}
+          className="border rounded-sm px-2 py-1"
           errorClassName="error"
         />
         <FieldError name="email" className="error" />
 
-        <Label name="message" errorClassName="error">
+        <Label
+          name="message"
+          errorClassName="error"
+          className="block text-gray-700 uppercase text-sm"
+        >
           Message
         </Label>
         <TextAreaField
           name="message"
           validation={{ required: true }}
+          className="block border rounded-sm px-2 py-1"
           errorClassName="error"
         />
         <FieldError name="message" className="error" />
 
-        <Submit disabled={loading}>Save</Submit>
+        <Submit
+          className="block bg-blue-700 text-white mt-8 px-4 py-2 rounded"
+          disabled={loading}
+        >
+          Save
+        </Submit>
       </Form>
     </>
   )

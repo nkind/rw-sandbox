@@ -5,7 +5,7 @@ const AboutPage = () => {
     <>
       <Metadata title="About" description="About page" />
 
-      <p>Hello world!</p>
+      <p className="font-light">Hello world!</p>
     </>
   )
 }
